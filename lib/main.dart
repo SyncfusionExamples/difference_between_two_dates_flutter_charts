@@ -2,7 +2,6 @@ import 'dart:math';
 
 ///Package imports
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart' as intl;
 
 ///Chart import
@@ -15,7 +14,8 @@ import 'package:syncfusion_flutter_core/core.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 
 ///Slider import
-import 'package:syncfusion_flutter_sliders/sliders.dart';
+import 'package:syncfusion_flutter_sliders/sliders.dart'
+    hide EdgeLabelPlacement;
 
 int chartHeight = 100;
 late RangeController rangeController;
@@ -56,8 +56,7 @@ class CallipersState extends State<Callipers> {
 }
 
 class DisplayDifference extends StatefulWidget {
-
-DisplayDifference({Key? key}) : super (key: key);
+  DisplayDifference({Key? key}) : super(key: key);
 
   @override
   DisplayDifferenceState createState() => DisplayDifferenceState();
@@ -261,8 +260,8 @@ class _DefaultRangeSelectorPageState extends State<DefaultRangeSelectorPage> {
                           dateIntervalType: DateIntervalType.minutes,
                           thumbShape: _CustomThumbShape(),
                           onChanged: (SfRangeValues values) {
-                            if(key.currentState != null)
-                            key.currentState!.setState(() {});
+                            if (key.currentState != null)
+                              key.currentState!.setState(() {});
                           },
                           child: Container(
                             width: mediaQueryData.orientation ==
@@ -359,13 +358,13 @@ class ChartSampleData {
       this.volume});
 
   /// Holds x value of the datapoint
-  final dynamic? x;
+  final dynamic x;
 
   /// Holds y value of the datapoint
   final num? y;
 
   /// Holds x value of the datapoint
-  final dynamic? xValue;
+  final dynamic xValue;
 
   /// Holds y value of the datapoint
   final num? yValue;
